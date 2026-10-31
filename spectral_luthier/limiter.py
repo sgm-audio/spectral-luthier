@@ -13,10 +13,10 @@ import pyloudnorm as pyln
 
 class TransparentLimiter:
     """
-    Transparent true-peak limiter for final mastering stage
+    Final-stage limiter
 
-    Uses lookahead limiting with soft-knee to maximize loudness
-    while avoiding clipping and minimizing artifacts.
+    Uses pedalboard.Limiter plus gain to reach a target loudness. There is no
+    lookahead or soft knee in this code; true peak is only measured (4x resample).
     """
 
     def __init__(

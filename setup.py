@@ -8,10 +8,10 @@ setup(
     version="0.1.0",
     author="Scott Mills",
     author_email="scott@sgmstudios.ca",
-    description="Autonomous Stem-Aware Spectral Mastering with Dynamic DSP",
+    description="Stem-based mastering experiment: Demucs separation, per-stem gain/EQ/compression against a target profile, then a limiter",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/scottmills306/spectral-luthier",
+    url="https://github.com/sgm-audio/spectral-luthier",
     packages=find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
@@ -30,7 +30,12 @@ setup(
         "typer>=0.9.0",
         "rich>=13.0.0",
         "loguru>=0.7.0",
-        # Optional for stem separation: "demucs>=4.0.1", "torch>=2.2.0", "torchaudio>=2.2.0"
+        "pyloudnorm>=0.1.1",
+        "pydantic>=2.0.0",
+        # stem_master.py imports torch at module level, so these are required, not optional
+        "torch>=2.2.0",
+        "torchaudio>=2.2.0",
+        "demucs>=4.0.1",
     ],
     entry_points={
         "console_scripts": [

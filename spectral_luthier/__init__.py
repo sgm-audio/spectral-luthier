@@ -1,8 +1,8 @@
 """
-Spectral Neural Luthier - Autonomous Stem-Aware Spectral Mastering
+Spectral Luthier - stem-based mastering experiment
 
-This module provides cutting-edge spectral mastering using source separation
-and stem-level rebalancing to fix mix issues without access to the original multitrack.
+Stem-based mastering experiment: separate a stereo mix with Demucs, adjust each
+stem against a target profile, sum, then limit.
 """
 
 from .stem_master import StemMaster
